@@ -452,19 +452,19 @@ export default function DashboardScreen({ user }) {
   value={cycleDate}
   onChange={(e) => setCycleDate(e.target.value)}
   style={{
-    width: "100%",
-    maxWidth: "100%",
-    minWidth: 0,
-    padding: "12px",
-    border: "2px solid #ec4899",
-    borderRadius: "14px",
-    fontSize: "16px",
-    boxSizing: "border-box",
-    marginBottom: "16px",
-    marginTop: "8px",
-    WebkitAppearance: "none",
-    appearance: "none",
-    display: "block"
+    width:"100%",
+    maxWidth:"100%",
+    minWidth:0,
+    padding:"14px",
+    border:"2px solid #ec4899",
+    borderRadius:"14px",
+    fontSize:"16px",
+    boxSizing:"border-box",
+    marginBottom:"16px",
+    marginTop:"8px",
+    color:"#000",
+    backgroundColor:"#fff",
+    display:"block"
   }}
 />
               <label style={{fontSize:"13px",color:"#888",display:"block",marginBottom:"6px"}}>Duracion del ciclo (dias)</label>
