@@ -223,7 +223,7 @@ const getResumenSemanaActual = () => {
   const getDiasDelMes = () => {
     const year = mesActual.getFullYear();
     const month = mesActual.getMonth();
-    const primerDia = new Date(year, month, 1).getDay();
+    const primerDia = (new Date(year, month, 1).getDay() + 6) % 7;
     const diasEnMes = new Date(year, month + 1, 0).getDate();
     return { primerDia, diasEnMes };
   };
@@ -243,7 +243,7 @@ const getResumenSemanaActual = () => {
   const resumenSemana = getResumenSemanaActual();
 
   const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-  const diasSemana = ["Dom","Lun","Mar","Mie","Jue","Vie","Sab"];
+  const diasSemana = ["Lun","Mar","Mie","Jue","Vie","Sab","Dom"];
 
   const EjerciciosFila = ({ s }) => {
     const arr = s.ejercicios
@@ -281,14 +281,14 @@ const getResumenSemanaActual = () => {
       <h2 style={{fontSize:"28px",fontWeight:"900",color:"#ec4899",marginBottom:"8px"}}>Tu Progreso 📊</h2>
       <p style={{color:"#888",marginBottom:"20px",fontSize:"14px"}}>{sesiones.length} sesiones registradas</p>
 
-      <div style={{display:"flex",gap:"6px",marginBottom:"24px",flexWrap:"wrap"}}>
-        {["calendario","resumen","fases","ejercicios","historial"].map(t => (
-          <button key={t} onClick={() => setTab(t)}
-            style={{flex:1,padding:"10px 4px",borderRadius:"12px",border:"2px solid #ec4899",background: tab===t?"#ec4899":"#fff",color: tab===t?"#fff":"#ec4899",fontWeight:"700",cursor:"pointer",fontSize:"11px",textTransform:"capitalize",minWidth:"60px"}}>
-            {t}
-          </button>
-        ))}
-      </div>
+      <div style={{display:"flex",gap:"4px",marginBottom:"24px",overflowX:"auto",paddingBottom:"4px"}}>
+  {["calendario","resumen","fases","ejercicios","historial"].map(t => (
+    <button key={t} onClick={() => setTab(t)}
+      style={{flex:1,padding:"8px 2px",borderRadius:"12px",border:"2px solid #ec4899",background: tab===t?"#ec4899":"#fff",color: tab===t?"#fff":"#ec4899",fontWeight:"700",cursor:"pointer",fontSize:"9px",textTransform:"capitalize",minWidth:"0",whiteSpace:"nowrap"}}>
+      {t}
+    </button>
+  ))}
+</div>
 
       {/* CALENDARIO */}
       {tab === "calendario" && (
