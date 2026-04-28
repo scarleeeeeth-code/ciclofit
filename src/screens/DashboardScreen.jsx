@@ -464,9 +464,9 @@ export default function DashboardScreen({ user }) {
     marginTop:"6px",
     WebkitAppearance:"none",
     appearance:"none",
-    backgroundColor:"#fff"
+    backgroundColor:"#fff",
     color: "#888",
-    WebkitTextFillColor: "#888",
+    WebkitTextFillColor: "#888"
   }}
 />
               <label style={{fontSize:"13px",color:"#888",display:"block",marginBottom:"6px"}}>Duracion del ciclo (dias)</label>
