@@ -452,17 +452,18 @@ export default function DashboardScreen({ user }) {
   value={cycleDate}
   onChange={(e) => setCycleDate(e.target.value)}
   style={{
-    width:"calc(100% - 12px)",
-    padding:"14px",
+    width:"100%",
+    maxWidth:"100%",
+    minWidth:0,
+    padding:"10px 14px",
     border:"2px solid #ec4899",
     borderRadius:"14px",
     fontSize:"16px",
     boxSizing:"border-box",
     marginBottom:"16px",
     marginTop:"6px",
-    marginLeft:"6px",
-    marginRight:"6px",
-    color:"#000",
+    WebkitAppearance:"none",
+    appearance:"none",
     backgroundColor:"#fff"
   }}
 />
